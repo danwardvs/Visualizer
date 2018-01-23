@@ -10,11 +10,14 @@
 #include <allegro5/allegro_image.h>
 #include <allegro5/allegro_font.h>
 #include <allegro5/allegro_ttf.h>
+#include <vector>
 
 #include "keyListener.h"
+#include "mouseListener.h"
 #include "joystickListener.h"
 #include "tools.h"
 #include "state.h"
+#include "Pixel.h"
 
 // Menu
 class menu : public state{
@@ -26,6 +29,11 @@ class menu : public state{
     void draw();
 
   private:
+
+    int angle;
+    std::vector<Pixel> gamePixels;
+
+
 
 
 };

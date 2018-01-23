@@ -15,6 +15,7 @@
 				<Compiler>
 					<Add option="-std=c++11" />
 					<Add option="-g" />
+					<Add directory="include" />
 				</Compiler>
 			</Target>
 		</Build>
@@ -34,6 +35,7 @@
 			<Add option="-lallegro_acodec" />
 			<Add directory="include" />
 		</Linker>
+		<Unit filename="include/Pixel.h" />
 		<Unit filename="include/globals.h" />
 		<Unit filename="include/init.h" />
 		<Unit filename="include/joystickListener.h" />
@@ -46,6 +48,7 @@
 		<Unit filename="include/rapidxml_utils.hpp" />
 		<Unit filename="include/state.h" />
 		<Unit filename="include/tools.h" />
+		<Unit filename="src/Pixel.cpp" />
 		<Unit filename="src/init.cpp" />
 		<Unit filename="src/joystickListener.cpp" />
 		<Unit filename="src/keyListener.cpp" />

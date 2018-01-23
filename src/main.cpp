@@ -85,6 +85,8 @@ void change_state(){
 // Setup game
 void setup(){
 
+  srand(time(NULL));
+
   std::cout<<"Initializing Allegro.";
   // Init allegro
   if( !al_init())
