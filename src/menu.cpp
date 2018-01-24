@@ -13,9 +13,20 @@ menu::~menu(){
 void menu::update(){
 
 
+  if(keyListener::key[ALLEGRO_KEY_A]){
+   for(int i=0; i<30; i++){
+      gamePixels.push_back(Pixel(mouseListener::mouse_x,mouseListener::mouse_y,((float)tools::random_int(-400,400)/100),((float)tools::random_int(-400,400)/100),particle));
+
+    }
+  }
 
 
+  if(keyListener::key[ALLEGRO_KEY_G]){
+   for(int i=0; i<10; i++){
+      gamePixels.push_back(Pixel(mouseListener::mouse_x,mouseListener::mouse_y,((float)tools::random_int(-200,200)/100),((float)tools::random_int(-200,200)/100),particle));
 
+    }
+  }
 
   angle+=1;
 
