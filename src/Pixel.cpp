@@ -32,6 +32,7 @@ Pixel::Pixel(int newX, int newY, float newVelX,float newVelY, ALLEGRO_BITMAP *ne
   r=100;
   b=100;
   g=100;
+
   vel_x=newVelX;
   vel_y=newVelY;
 

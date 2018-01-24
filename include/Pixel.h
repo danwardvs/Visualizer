@@ -25,7 +25,7 @@ class Pixel
     int r;
     int g;
     int b;
-    int alpha;
+    int alpha=0;
 
     float x;
     float y;

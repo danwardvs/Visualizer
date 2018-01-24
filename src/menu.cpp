@@ -13,49 +13,55 @@ menu::~menu(){
 void menu::update(){
 
 
+
+
+
+
   angle+=1;
 
   if(mouseListener::mouse_button & 1){
-   for(int i=0; i<25; i++){
+   for(int i=0; i<50; i++){
       gamePixels.push_back(Pixel(mouseListener::mouse_x,mouseListener::mouse_y,cos(i)*((float)tools::random_int(170,230)/100),sin(i)*((float)tools::random_int(170,230)/100),particle));
 
     }
 
 
   }
-
+//
   if(mouseListener::mouse_button & 2){
-   for(int i=0; i<75; i++){
+  for(int i=0; i<75; i++){
       gamePixels.push_back(Pixel(mouseListener::mouse_x,mouseListener::mouse_y,cos(i)*((float)tools::random_int(170,230)/100),sin(i)*((float)tools::random_int(170,230)/100)));
 
-    }
+   }
 
 
   }
-  if(keyListener::anyKeyPressed){
-
-    float newX;
-    float newY;
-    float newRadius=300;
-
-    newX=512+(float)newRadius*cos(angle);
-    newY=384+(float)newRadius*sin(angle);
-
-    for(int i=0; i<75; i++){
-      gamePixels.push_back(Pixel(newX,newY,cos(i)*((float)tools::random_int(170,230)/100),sin(i)*((float)tools::random_int(170,230)/100),particle));
+  if(keyListener::keyPressed[ALLEGRO_KEY_F]){
+          gameSpawners.push_back(Spawner());
 
     }
 
 
 
 
+
+
+
+
+
+  for(int i=0; i<gameSpawners.size(); i++){
+    gameSpawners.at(i).update();
+    for(int j=0; j<10; j++)
+      gamePixels.push_back(Pixel((int)gameSpawners.at(i).getX(),(int)gameSpawners.at(i).getY(),cos(j)*((float)tools::random_int(170,230)/100),sin(j)*((float)tools::random_int(170,230)/100),particle));
+
+
   }
 
-
-  for(int i=0; i<gamePixels.size(); i++){
+    for(int i=0; i<gamePixels.size(); i++){
     if(!gamePixels.at(i).update())
       gamePixels.erase(gamePixels.begin()+i);
   }
+
 
 }
 

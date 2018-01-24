@@ -18,6 +18,7 @@
 #include "tools.h"
 #include "state.h"
 #include "Pixel.h"
+#include "Spawner.h"
 
 // Menu
 class menu : public state{
@@ -32,8 +33,10 @@ class menu : public state{
 
     int angle;
     std::vector<Pixel> gamePixels;
+    std::vector<Spawner> gameSpawners;
 
     ALLEGRO_BITMAP *particle;
+
 
 
 
