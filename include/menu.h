@@ -33,6 +33,8 @@ class menu : public state{
     int angle;
     std::vector<Pixel> gamePixels;
 
+    ALLEGRO_BITMAP *particle;
+
 
 
 

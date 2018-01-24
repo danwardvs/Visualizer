@@ -16,13 +16,27 @@ Pixel::Pixel(int newX, int newY, float newVelX,float newVelY)
 {
   x=newX;
   y=newY;
-  r=255;
-  b=255;
-  g=255;
+  r=100;
+  b=100;
+  g=100;
   vel_x=newVelX;
   vel_y=newVelY;
 
 }
+
+Pixel::Pixel(int newX, int newY, float newVelX,float newVelY, ALLEGRO_BITMAP *newBitmap)
+{
+  sprite=newBitmap;
+  x=newX;
+  y=newY;
+  r=100;
+  b=100;
+  g=100;
+  vel_x=newVelX;
+  vel_y=newVelY;
+
+}
+
 
 
 
@@ -34,8 +48,10 @@ Pixel::~Pixel()
 void Pixel::draw(){
 
 
-
-  al_draw_pixel(x,y,al_map_rgba(r,g,b,alpha));
+  if(sprite==nullptr)
+    al_draw_pixel(x,y,al_map_rgba(r,g,b,alpha));
+  else
+    al_draw_tinted_bitmap(sprite,al_map_rgba(r,g,b,alpha),x-16,y-16,0);
 
 
 }

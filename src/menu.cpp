@@ -2,7 +2,7 @@
 
 // Init menu
 menu::menu(){
-
+  particle = tools::load_bitmap_ex("particle.png");
 }
 
 // Destory menu
@@ -16,6 +16,15 @@ void menu::update(){
   angle+=1;
 
   if(mouseListener::mouse_button & 1){
+   for(int i=0; i<25; i++){
+      gamePixels.push_back(Pixel(mouseListener::mouse_x,mouseListener::mouse_y,cos(i)*((float)tools::random_int(170,230)/100),sin(i)*((float)tools::random_int(170,230)/100),particle));
+
+    }
+
+
+  }
+
+  if(mouseListener::mouse_button & 2){
    for(int i=0; i<75; i++){
       gamePixels.push_back(Pixel(mouseListener::mouse_x,mouseListener::mouse_y,cos(i)*((float)tools::random_int(170,230)/100),sin(i)*((float)tools::random_int(170,230)/100)));
 
@@ -33,7 +42,7 @@ void menu::update(){
     newY=384+(float)newRadius*sin(angle);
 
     for(int i=0; i<75; i++){
-      gamePixels.push_back(Pixel(newX,newY,cos(i)*((float)tools::random_int(170,230)/100),sin(i)*((float)tools::random_int(170,230)/100)));
+      gamePixels.push_back(Pixel(newX,newY,cos(i)*((float)tools::random_int(170,230)/100),sin(i)*((float)tools::random_int(170,230)/100),particle));
 
     }
 

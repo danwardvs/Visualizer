@@ -10,6 +10,8 @@ class Pixel
   public:
     Pixel(int,int,int);
     Pixel(int,int,float,float);
+    Pixel(int,int,float,float,ALLEGRO_BITMAP *);
+
 
     virtual ~Pixel();
 
@@ -30,6 +32,8 @@ class Pixel
 
     float vel_x;
     float vel_y;
+
+    ALLEGRO_BITMAP *sprite=nullptr;
 
 };
 
