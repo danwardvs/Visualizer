@@ -35,6 +35,8 @@ class tools{
         static ALLEGRO_BITMAP * load_bitmap_ex( std::string file);
         static ALLEGRO_SAMPLE * load_sample_ex( std::string file);
 
+        static float interpolate(float, float , float);
+
 
         // Clamp values
         template <class T> static T clamp( T min_val, T max_val, T value) {

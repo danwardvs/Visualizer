@@ -30,9 +30,12 @@ class Noise : public state{
     void draw();
 
   private:
-    static const int width=200;
-    static const int height=200;
+    static const int width=800;
+    static const int height=600;
     float white_noise [width][height];
+    float smooth_noise [width][height];
+    float * generate_smooth_noise(int,int,int);
+
 
 
 

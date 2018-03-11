@@ -13,6 +13,11 @@ int tools::convertStringToInt( std::string newString){
   return result;
 }
 
+float tools::interpolate(float x1,float x2,float alpha){
+  return x1 * (1-alpha) + alpha * x2;
+
+}
+
 
 // A function to streamline error reporting in file loading
 void tools::abort_on_error( std::string message, std::string title){
