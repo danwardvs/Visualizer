@@ -17,6 +17,7 @@
 #include "init.h"
 #include "state.h"
 #include "menu.h"
+#include "Noise.h"
 
 // Current state object
 state *currentState = nullptr;
@@ -65,6 +66,11 @@ void change_state(){
       case STATE_MENU:
         currentState = new menu();
         std::cout<<"Switched state to main menu.\n";
+        break;
+
+      case STATE_NOISE:
+        currentState = new Noise();
+        std::cout<<"Switched state to noise.\n";
         break;
       case STATE_EXIT:
         std::cout<<"Exiting program.\n";
@@ -115,7 +121,7 @@ void setup(){
   // Aquire screen
 
   //al_set_new_display_flags(ALLEGRO_FULLSCREEN);
-  display = al_create_display(1024, 768);
+  display = al_create_display(800, 600);
 
   if( !display)
     tools::abort_on_error( "Screen could not be created", "Error");

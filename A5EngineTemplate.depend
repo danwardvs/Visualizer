@@ -128,10 +128,10 @@
 	"state.h"
 	"menu.h"
 
-1512781747 source:/home/danwardvs/Documents/Visualizer/src/init.cpp
+1520745711 source:/home/danwardvs/Documents/Visualizer/src/init.cpp
 	"init.h"
 
-1512781747 /home/danwardvs/Documents/Visualizer/include/init.h
+1520744971 /home/danwardvs/Documents/Visualizer/include/init.h
 	<allegro5/allegro.h>
 	<allegro5/allegro_primitives.h>
 	<allegro5/allegro_image.h>
@@ -139,23 +139,23 @@
 	<allegro5/allegro_acodec.h>
 	"state.h"
 
-1512781747 /home/danwardvs/Documents/Visualizer/include/state.h
+1520745787 /home/danwardvs/Documents/Visualizer/include/state.h
 
-1512781747 source:/home/danwardvs/Documents/Visualizer/src/joystickListener.cpp
+1520744971 source:/home/danwardvs/Documents/Visualizer/src/joystickListener.cpp
 	"joystickListener.h"
 
-1512781747 /home/danwardvs/Documents/Visualizer/include/joystickListener.h
+1520744971 /home/danwardvs/Documents/Visualizer/include/joystickListener.h
 	<iostream>
 	<allegro5/allegro.h>
 
-1512781747 source:/home/danwardvs/Documents/Visualizer/src/keyListener.cpp
+1520744971 source:/home/danwardvs/Documents/Visualizer/src/keyListener.cpp
 	"keyListener.h"
 
-1512781747 /home/danwardvs/Documents/Visualizer/include/keyListener.h
+1520744971 /home/danwardvs/Documents/Visualizer/include/keyListener.h
 	<iostream>
 	<allegro5/allegro.h>
 
-1516677481 source:/home/danwardvs/Documents/Visualizer/src/main.cpp
+1520748145 source:/home/danwardvs/Documents/Visualizer/src/main.cpp
 	<allegro5/allegro.h>
 	<allegro5/allegro_primitives.h>
 	<allegro5/allegro_image.h>
@@ -167,11 +167,12 @@
 	"init.h"
 	"state.h"
 	"menu.h"
+	"Noise.h"
 
-1512781747 /home/danwardvs/Documents/Visualizer/include/mouseListener.h
+1520744971 /home/danwardvs/Documents/Visualizer/include/mouseListener.h
 	<allegro5/allegro.h>
 
-1516828902 /home/danwardvs/Documents/Visualizer/include/menu.h
+1520744971 /home/danwardvs/Documents/Visualizer/include/menu.h
 	<allegro5/allegro.h>
 	<allegro5/allegro_image.h>
 	<allegro5/allegro_font.h>
@@ -185,7 +186,7 @@
 	"Pixel.h"
 	"Spawner.h"
 
-1512781747 /home/danwardvs/Documents/Visualizer/include/tools.h
+1520744971 /home/danwardvs/Documents/Visualizer/include/tools.h
 	<string>
 	<math.h>
 	<sstream>
@@ -197,29 +198,46 @@
 	<allegro5/allegro_image.h>
 	<allegro5/allegro_audio.h>
 
-1516829689 source:/home/danwardvs/Documents/Visualizer/src/menu.cpp
+1520744971 source:/home/danwardvs/Documents/Visualizer/src/menu.cpp
 	"menu.h"
 
-1512781747 source:/home/danwardvs/Documents/Visualizer/src/mouseListener.cpp
+1520744971 source:/home/danwardvs/Documents/Visualizer/src/mouseListener.cpp
 	"mouseListener.h"
 
-1512781747 source:/home/danwardvs/Documents/Visualizer/src/state.cpp
+1520744971 source:/home/danwardvs/Documents/Visualizer/src/state.cpp
 	"state.h"
 
-1512781747 source:/home/danwardvs/Documents/Visualizer/src/tools.cpp
+1520744971 source:/home/danwardvs/Documents/Visualizer/src/tools.cpp
 	"tools.h"
 
-1516829526 /home/danwardvs/Documents/Visualizer/include/Pixel.h
+1520744971 /home/danwardvs/Documents/Visualizer/include/Pixel.h
 	"allegro5/allegro_primitives.h"
 	"tools.h"
 
-1516829488 source:/home/danwardvs/Documents/Visualizer/src/Pixel.cpp
+1520744971 source:/home/danwardvs/Documents/Visualizer/src/Pixel.cpp
 	"Pixel.h"
 
-1516829107 /home/danwardvs/Documents/Visualizer/include/Spawner.h
+1520744971 /home/danwardvs/Documents/Visualizer/include/Spawner.h
 	"Pixel.h"
 	"tools.h"
 
-1516829603 source:/home/danwardvs/Documents/Visualizer/src/Spawner.cpp
+1520744971 source:/home/danwardvs/Documents/Visualizer/src/Spawner.cpp
+	"Spawner.h"
+
+1520748061 source:/home/danwardvs/Documents/Visualizer/src/Noise.cpp
+	"Noise.h"
+
+1520748162 /home/danwardvs/Documents/Visualizer/include/Noise.h
+	<allegro5/allegro.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_ttf.h>
+	<vector>
+	"keyListener.h"
+	"mouseListener.h"
+	"joystickListener.h"
+	"tools.h"
+	"state.h"
+	"Pixel.h"
 	"Spawner.h"
 
