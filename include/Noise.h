@@ -19,6 +19,7 @@
 #include "state.h"
 #include "Pixel.h"
 #include "Spawner.h"
+#include "vector"
 
 // Noise
 class Noise : public state{
@@ -30,11 +31,14 @@ class Noise : public state{
     void draw();
 
   private:
-    static const int width=800;
-    static const int height=600;
-    float white_noise [width][height];
-    float smooth_noise [width][height];
-    float * generate_smooth_noise(int,int,int);
+
+    std::vector<std::vector<float>>  generate_white_noise(int,int);
+
+
+    std::vector<std::vector<float>> perlin_noise;
+    //float white_noise [width][height];
+    std::vector<std::vector<std::vector<float>>> smooth_noise;
+    std::vector<std::vector<float>> generate_smooth_noise(int,int,int);
 
 
 
