@@ -3,14 +3,17 @@
 // Init Noise
 Noise::Noise(){
 
-  int width=800;
-  int height=600;
+  std::cout<<"Starting generation\n";
+
+  int width=400;
+  int height=400;
 
   float octaveCount = 7;
 
-  for(int i=0; i<octaveCount; i++)
+  for(int i=0; i<octaveCount; i++){
+    std::cout<<"Generated octave "<<i<<" of "<<octaveCount<<".\n";
     smooth_noise.push_back(generate_smooth_noise(width,height,pow(2,i)));
-
+  }
 
 
   float persistance = 0.5f;
@@ -24,6 +27,8 @@ Noise::Noise(){
   for(int i=octaveCount-1;i>0;i--){
     amplitude *= persistance;
     totalAmplitude += amplitude;
+    std::cout<<"Blended octave "<<i<<" of "<<octaveCount<<".\n";
+
 
     for(int j=0; j<width; j++){
       for(int k=0; k<height; k++){
@@ -33,14 +38,32 @@ Noise::Noise(){
     }
 
   }
-
+  std::cout<<"Normalizing\n";
   for(int i=0;i<width;i++){
     for(int j=0; j<height;j++){
       perlin_noise[i][j] /= totalAmplitude;
     }
   }
 
+    std::cout<<"Drawing\n";
 
+
+  ALLEGRO_BITMAP *newTarget;
+  newTarget = al_create_bitmap(width,height);
+
+  al_set_target_bitmap(newTarget);
+
+
+   for(int i=0;i<perlin_noise.size();i++){
+
+    for(int j=0; j<perlin_noise[0].size();j++){
+      std::cout<<"Drawing row "<<i<<", column "<<j<<" of "<<perlin_noise[0].size()<<".\n";
+
+      al_put_blended_pixel(i,j,al_map_rgba_f(perlin_noise[i][j],perlin_noise[i][j],perlin_noise[i][j],perlin_noise[i][j]));
+
+    }
+  }
+  al_save_bitmap("perlin.png",newTarget);
 
 }
 
@@ -118,15 +141,10 @@ void Noise::draw(){
 
 
   // Background
-  al_clear_to_color( al_map_rgb(0,50,0));
+  //al_clear_to_color( al_map_rgb(0,50,0));
 
 
-  for(int i=0;i<perlin_noise.size();i++){
-    for(int j=0; j<perlin_noise[0].size();j++){
-      al_put_blended_pixel(i,j,al_map_rgba_f(perlin_noise[i][j],perlin_noise[i][j],perlin_noise[i][j],perlin_noise[i][j]));
 
-    }
-  }
 
 }
 
